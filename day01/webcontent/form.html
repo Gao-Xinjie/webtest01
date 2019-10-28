@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <style type="text/css">
+        .color_red{
+            color:red;}
+        #front_size{
+            font-size:12px;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form action="success.html">
+        用户名：<input type="text" name="username" id="username"> <br>
+        密&emsp;码：<input type="password" name="password" id="password"><br>
+        性&emsp;别：<input type="radio" name="gender" value="男" checked="checked">男
+                    <input type="radio" name="gender" value="女">女
+                    <br>
+        爱&emsp;好：<input type="checkbox" name="like" value="爬山">爬山
+                    <input type="checkbox" name="like" value="跳水">跳水
+                    <input type="checkbox" name="like" value="洗澡">洗澡
+        <br>
+        喜欢的明星：<select name="star" id="front_size">
+                        <option>吴京</option>
+                        <option>高鑫杰</option>
+                        <option>成龙</option>
+                  </select>
+        <br>
+        <input type="reset" value="重置" class="color_red">
+        <input type="submit" value="注册" id="submit">
+    </form>
+</body>
+</html>
+<script type="text/javascript">
+    window.onload=function () {
+        var btn = document.getElementById("submit");
+        btn.onclick=function () {
+
+
+
+        //1读取用户名
+        var username = document.getElementById("username").value;
+        if (username=="" || username==null){
+            // alert("请输入用户名");
+            var bool =confirm("确认删除吗？");
+            //取消默认行为
+            alert(bool);
+            return false;
+        }};
+    };
+
+</script>

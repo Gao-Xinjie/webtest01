@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>load</title>
+    <!--3引入外部js 此时标签中含有src 属性，不能再标签中书写js代码-->
+    <script type="text/javascript" src="demojs.js"></script>
+</head>
+<body>
+    <!--js的嵌入方式：行内 结构与行为相耦合，不建议使用
+        <button id="btnId" onclick= "alter('hello')">hello</button>
+    -->
+    <button id="btnId" >hello</button>
+</body>
+<!--2写到script标签里-->
+    <!--<script type="text/javascript">-->
+        <!--/*window.onload: 当前文档完全加载完成-->
+        <!--完全：指的是  包含图片，音频，视频等；-->
+        <!--3引入外部文件-->
+        <!--* */-->
+        <!--window.onload = function () {-->
+            <!--var btn = document.getElementById("btnId");-->
+            <!--btn.onclick = function () {-->
+                <!--alert("helloworld");-->
+            <!--};-->
+
+        <!--};-->
+    <!--</script>-->
+</html>

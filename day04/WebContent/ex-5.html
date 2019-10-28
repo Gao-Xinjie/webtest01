@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Untitled Document</title>
+	<link rel="stylesheet" type="text/css" href="styleB/css.css" />
+	<script type="text/javascript" src="lib/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			/*
+			* window.onload 与$(function(){});
+			* 1,$(function(){});当前文档绘制成功后执行
+			* 2.window.onload 当前文档完全加载后执行
+			*
+			* 前者可以书写一次，（会覆盖前边的），后者可以书写很多次
+			* 前者语法只有一种，后者两种语法
+			*
+			* */
+			//实现删除功能
+			$("#employeeTable").delegate("a","click",function () {
+                $(this).parents("tr").remove();
+				return false;
+            });
+
+			/*$("a").live("click",function () {
+				$(this).parents("tr").remove();
+				return false;
+            });*/
+
+			//添加员工的事件
+			$("#addEmpButton").click(function () {
+				var empName = $("#empName").val();
+				var email = $("#email").val();
+				var salary = $("#salary").val();
+				var $tr = $("<tr>\n" +
+                    "\t\t\t\t<td>"+empName+"</td>\n" +
+                    "\t\t\t\t<td>"+email+"</td>\n" +
+                    "\t\t\t\t<td>"+salary+"</td>\n" +
+                    "\t\t\t\t<td><a href=\"deleteEmp?id=001\">Delete</a></td>\n" +
+                    "\t\t\t</tr>")
+				$("#employeeTable").append($tr);
+            });
+		});
+		
+	</script>
+	</head>
+	<body>
+	
+		<table id="employeeTable">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Salary</th>
+				<th>&nbsp;</th>
+			</tr>
+			<tr>
+				<td>Tom</td>
+				<td>tom@tom.com</td>
+				<td>5000</td>
+				<td><a href="deleteEmp?id=001">Delete</a></td>
+			</tr>
+			<tr>
+				<td>Jerry</td>
+				<td>jerry@sohu.com</td>
+				<td>8000</td>
+				<td><a href="deleteEmp?id=002">Delete</a></td>
+			</tr>
+			<tr>
+				<td>Bob</td>
+				<td>bob@tom.com</td>
+				<td>10000</td>
+				<td><a href="deleteEmp?id=003">Delete</a></td>
+			</tr>
+		</table>
+	
+		<div id="formDiv">
+		
+			<h4>添加新员工</h4>
+	
+			<table>
+				<tr>
+					<td class="word">name: </td>
+					<td class="inp">
+						<input type="text" name="empName" id="empName" />
+					</td>
+				</tr>
+				<tr>
+					<td class="word">email: </td>
+					<td class="inp">
+						<input type="text" name="email" id="email" />
+					</td>
+				</tr>
+				<tr>
+					<td class="word">salary: </td>
+					<td class="inp">
+						<input type="text" name="salary" id="salary" />
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button id="addEmpButton" value="abc">
+							Submit
+						</button>
+					</td>
+				</tr>
+			</table>
+	
+		</div>
+	
+	</body>
+</html>

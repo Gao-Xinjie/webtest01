@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>全选全不选2(空白)</title>
+	<script type="text/javascript" src="lib/jquery-1.7.2.js"></script>
+	<script type="text/javascript">
+		/* 
+		功能需求：
+			①全选框：点击后让所有爱好的选中状态和自己一致
+			②爱好框：点满后将全选框选中，否则取消选中
+		*/
+		$(function(){
+            $("#checkedAllBox").click(function () {
+				var cc =this.checked;
+				$("input[name='items']").attr("checked",cc);
+            });
+
+            $("input[name='items']").click(function () {
+				//判断爱好框是否全部选中（爱好框的个数是否等于选中的爱好框的个数）
+				var $ic=$("input[name='items']:checked")
+				var $in=$("input[name='items']")
+				if($ic.length==$in.length){
+				    $("#checkedAllBox").attr("checked",true);
+				}else {
+                    $("#checkedAllBox").attr("checked",false);
+				}
+            });
+		});
+		
+	</script>
+	</head>
+	<body>
+	
+		<form method="post" action="">
+		
+			你爱好的运动是：<input type="checkbox" id="checkedAllBox" />全选/全不选 
+			<br />
+			<input type="checkbox" name="items" value="足球" />足球
+			<input type="checkbox" name="items" value="篮球" />篮球
+			<input type="checkbox" name="items" value="羽毛球" />羽毛球
+			<input type="checkbox" name="items" value="乒乓球" />乒乓球
+		</form>
+	
+	</body>
+</html>

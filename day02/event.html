@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+    <script type="text/javascript">
+        /*
+        * fun();直接调用函数
+        * fun；调用函数引用
+        * */
+        window.onload = function () {
+            function dl() {
+              alert("拜拜")
+            };
+            var btn=document.getElementById("btnId");
+            btn.onclick = dl;
+        };
+    </script>
+</head>
+<body>
+    <button id="btnId">地雷</button>
+</body>
+</html>
